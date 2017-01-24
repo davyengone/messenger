@@ -1,0 +1,52 @@
+<ion-view>
+  <ion-header-bar class="bar-yahoo item-input-inset">
+    <label class="item-input-wrapper no-bg">
+      <i class="icon ion-ios-search placeholder-icon text-2x"></i>
+      <input type="search" placeholder="Search" ng-model="query" ng-init="query=''">
+    </label>
+    <button class="button button-icon ion-ios-person" ui-sref="settings.account" ng-show="query.length == 0"></button>
+    <button class="button button-clear" ng-show="query.length > 0" ng-click="query = ''">
+      Cancel
+    </button>
+  </ion-header-bar>
+  <ion-content class="bg-grey-200">
+    <div class="list" ng-hide="query.length">
+      <a class="item item-avatar" href="#" ui-sref="contact.message({id: 1})">
+        <img src="img/ben.png">
+        <div class="row no-padder">
+          <div class="col-75 no-padder">
+            <div class="font-bold">Ben</div>
+            <p>Back off, man. I'm a scientist.</p>  
+          </div>
+          <div class="col no-padder m-l-xs">
+            <p>1:34pm</p>
+            <span class="status on"></span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="list m-n">
+      <div class="item item-divider text-xs color-grey-500 bg-white b-none">
+        Friends on Messenger
+      </div>
+      <a class="item item-avatar item-icon-right text-md" href="#" ng-repeat="contact in contacts | filter:query track by $index" ui-sref="contact.message({id: $index})">
+        <img ng-src="{{contact.image}}">
+        <div class="font-bold">{{contact.name}}</div>
+        <p>{{contact.nickname}}</p>
+        <span class="item-note">
+          <i class="icon ion-android-more-horizontal" ng-click="actionSheet()"></i>
+        </span>
+      </a>
+
+      <a class="item item-avatar item-icon-left text-md" href="#">
+        <i class="icon ion-android-mail color-grey-500 m-l-sm"></i>
+        <div class="font-bold">Invite friends</div>
+        <p>Get more friends on Messenger!</p>
+      </a>
+    </div>
+  </ion-content>
+  <div class="button-pencil" ng-click="openNew()">
+    <i class="icon ion-edit"></i>
+  </div>
+</ion-view>

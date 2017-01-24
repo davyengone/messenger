@@ -1,0 +1,51 @@
+<ion-view>
+  <ion-header-bar class="bar-yahoo item-input-inset">
+    <label class="item-input-wrapper no-bg">
+      <i class="icon ion-ios-search placeholder-icon text-2x"></i>
+      <input type="search" placeholder="Search" ng-model="query">
+    </label>
+    <button class="button button-icon ion-ios-person"></button>
+    <!-- <button class="button button-clear">
+      Cancel
+    </button> -->
+  </ion-header-bar>
+  <ion-content class="bg-grey-200">
+    <div class="list">
+      <a class="item item-avatar" href="#">
+        <img src="img/ben.png">
+        <div class="row no-padder">
+          <div class="col-75 no-padder">
+            <h2>Adam</h2>
+            <p>Back off, man. I'm a scientist.</p>  
+          </div>
+          <div class="col no-padder m-l-xs">
+            <p>1:34pm</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="list m-n">
+      <div class="item item-divider text-xs color-grey-500 bg-white b-none">
+        Friends on Messenger
+      </div>
+      <a class="item item-avatar item-icon-right text-md" href="#" ng-repeat="contact in contacts | filter:query track by $index" ui-sref="message({id: $index})">
+        <img ng-src="{{contact.image}}">
+        <div class="font-bold">{{contact.name}}</div>
+        <p>{{contact.nickname}}</p>
+        <span class="item-note">
+          <i class="icon ion-android-more-horizontal" ng-click="actionSheet()"></i>
+        </span>
+      </a>
+
+      <a class="item item-avatar item-icon-left text-md" href="#">
+        <i class="icon ion-android-mail color-grey-500 m-l-sm"></i>
+        <div class="font-bold">Invite friends</div>
+        <p>Get more friends on Messenger!</p>
+      </a>
+    </div>
+  </ion-content>
+  <div class="button-pencil">
+    <i class="icon ion-edit"></i>
+  </div>
+</ion-view>

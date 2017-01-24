@@ -1,0 +1,77 @@
+$colorYahoo: #33c1d7
+
+@mixin gradient()
+  background: linear-gradient(45deg, #3cb1bd 0, #4e72d0 50%, #5f2ae1 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3cb1bd', endColorstr='#5f2ae1', GradientType=1 )
+
+.bar.bar-yahoo
+  @include gradient
+  border-bottom: none
+  .button-icon, .icon, input
+    color: #fff
+
+.bar-yahoo
+  .nav-bar-block
+    display: none
+
+.status
+  display: inline-block
+  width: 10px
+  height: 10px
+  border-radius: 100%
+  &.on
+    background-color: #11c1f3
+  &.off
+    background-color: #99a6ad
+  &.busy
+    background-color: #ef473a
+  &.away
+    background-color: #ffc900
+
+.button-pencil
+  @include gradient
+  position: fixed
+  right: 16px
+  bottom: 16px
+  z-index: 100
+  color: #fff
+  width: 48px
+  height: 48px
+  font-size: 20px
+  border-radius: 999em
+  text-align: center
+  line-height: 48px
+
+.chat-bubble
+  .bubble
+    position: relative
+    margin-bottom: 8px
+    padding: 0
+    .content
+      display: inline-block
+      background: $colorYahoo
+      border-radius: 4px
+      padding: 10px
+      font-size: 15px
+      color: white
+      white-space: normal
+      &.photo
+        padding: 0
+    .icon-tail
+      position: absolute
+      top: 0
+      left: -5px
+      width: 0
+      height: 0
+      border-top: 7px solid $colorYahoo
+      border-left: 7px solid transparent
+      border-top-left-radius: 3px
+
+  .me
+    .bubble
+  .friend
+    .bubble .content
+      background: lighten($colorYahoo, 40%)
+      color: #000
+    .icon-tail
+      border-top: 7px solid lighten($colorYahoo, 40%)

@@ -1,0 +1,56 @@
+<ion-view view-title="Settings">
+  <ion-nav-bar class="bar-light box-shadow">
+    <ion-nav-buttons side="secondary">
+      <button class="button button-clear button-calm" ui-sref="contact.list"><span class="font-bold">Done</span></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <div class="text-center wrapper-md">
+      <img src="img/adam.jpg" width="128" class="b b-2x b-light rounded" alt="">
+    </div>
+
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">First name</span>
+        <input type="text" placeholder="Hieu">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Last name</span>
+        <input type="text" placeholder="Pham">
+      </label>
+    </div>
+
+    <div class="list">
+      <item class="item item-divider font-bold color-grey-500 no-bg text-xs b-none">
+        You can be reached at:
+      </item>
+      <div class="item item-icon-left text-md b-none">
+        <i class="icon ion-android-mail m-l-sm"></i>
+        <div class="m-l-md">mr_hie@yahoo.com</div>
+      </div>
+    </div>
+
+    <div class="list calm b-t b-b b-light padder-v">
+      <a href="" class="item item-icon-left text-md b-none" ng-click="openModal()">
+        <i class="icon ion-key m-l-sm"></i>
+        <div class="m-l-md">Account Key</div>
+      </a>
+      <a href="" class="item item-icon-left text-md b-none" ui-sref="settings.more">
+        <i class="icon ion-ios-person-outline m-l-sm"></i>
+        <div class="m-l-md">Blocked People</div>
+      </a>
+      <a href="" class="item item-icon-left text-md b-none" ui-sref="settings.more">
+        <i class="icon ion-android-lock m-l-sm"></i>
+        <div class="m-l-md">Privacy Settings</div>
+      </a>
+      <a href="" class="item item-icon-left text-md b-none" ui-sref="settings.more">
+        <i class="icon ion-gear-a m-l-sm"></i>
+        <div class="m-l-md">Manage Accounts</div>
+      </a>
+      <a href="" class="item item-icon-left text-md b-none" ui-sref="settings.more">
+        <i class="icon ion-help-circled m-l-sm"></i>
+        <div class="m-l-md">Help</div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

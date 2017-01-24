@@ -1,0 +1,30 @@
+<ion-modal-view view-title="New Message">
+  <ion-header-bar class="bar-light b-b">
+    <button class="button button-clear button-calm" ng-click="closeNew()">
+      Cancel
+    </button>
+    <div class="h1 title">New Message</div>
+  </ion-header-bar>
+  <div class="bar bar-subheader item-input-inset m-none box-shadow-lg">
+    To:
+    <label class="item-input-wrapper no-bg">
+      <input type="search" placeholder="Name, phone or Yahoo email" ng-model="query" ng-init="query=''">
+    </label>
+  </div>
+  <ion-content class="has-subheader">
+    <div class="list m-n">
+      <a class="item text-center calm b-none" href="#">
+        <i class="icon ion-person-stalker"></i>
+        Create Group
+      </a>
+      <a class="item item-avatar item-icon-right text-md" href="#" ng-repeat="contact in contacts | filter:query track by $index" ui-sref="contact.message({id: $index})" ng-click="closeNew()">
+        <img ng-src="{{contact.image}}">
+        <div class="font-bold">{{contact.name}}</div>
+        <p>{{contact.nickname}}</p>
+        <span class="item-note">
+          <i class="icon ion-android-more-horizontal" ng-click="actionSheet()"></i>
+        </span>
+      </a>
+    </div>  
+  </ion-content>
+</ion-modal-view>
